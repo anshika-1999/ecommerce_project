@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="page-add">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="page-breadcrumb">
+                    <h2>{{product.category}}'s Wear<span></span></h2>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- Page Add Section End -->
+
+<!-- Product Page Section Beign -->
+<section class="product-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                    <div class="product-img">
+                        <figure>
+                            <img id='imagepr{{product.product_id}}'src="/media/{{product.prod_img}}" alt="">
+                        </figure>
+                    </div>
+
+
+            </div>
+            <div class="col-lg-6">
+                <div class="product-content">
+                    <h2 id='namepr{{product.product_id}}'>{{product.product_name}}</h2>
+                    <div class="pc-meta">
+                        <h5 >&#8377 <span id='pricepr{{product.product_id}}'>{{product.price}}</span></h5>
+                    </div>
+                    <p>{{product.desc}}</p>
+                    <ul class="tags">
+                        <li><span>Category :</span> {{product.category}}’s Wear</li>
+
+                    </ul>
+
+
+                    <span class='scart'><button id='pr{{product.product_id}}' class="primary-btn pc-btn cart" >Add to cart</button></span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+<br>
+<br>
+<!-- Product Page Section End -->
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load staticfiles %}
+<section class="page-add cart-page-add">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="page-breadcrumb">
+                    <h2>Shopping Cart</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Page Add Section End -->
+
+<!-- Cart Page Section Begin -->
+<div class="cart-page">
+    <div class="container">
+        <div class="cart-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="product-h">Product</th>
+                        <th>Price</th>
+                        <th class="quan">Quantity</th>
+                        <th>Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="shopping_items">
+
+                </tbody>
+            </table>
+        </div>
+        <div class="cart-btn">
+            <div class="row">
+                <div class="col-lg-6">
+
+                </div>
+                <div class="col-lg-5 offset-lg-1 text-left text-lg-right mx-2">
+                    <div class="site-btn clear-btn" onclick='clearCart()'>Clear Cart</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="shopping-method" id="ShoppingMethod">
+
+    </div>
+</div>
+
+
+<!-- Cart Page Section End -->
+
+{% endblock %}
+
+{% block js %}
+<script>
+updatingShoppingList(cart);
+</script>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html'%}
+
+{% block content %}
+{% load staticfiles %}
+<br>
+{% for pro in allProds %}
+
+<section class="categories-page spad">
+        <div class="container">
+          <div class="row">
+              <div class="col-lg-12 text-center">
+                  <div class="section-title">
+                      <h3 style = "font-weight:bold">Category - {{pro.0.category}}</h3>
+                      <br>
+                  </div>
+              </div>
+          </div>
+        <br>
+        <div class="row" id="product-list">
+          {% for p in pro %}
+          <div class="col-lg-3 col-md-6">
+              <div class="single-product-item">
+                  <figure>
+                      <img id='imagepr{{p.product_id}}' src="/media/{{p.prod_img}}" alt="">
+                      <div class="hover-icon">
+                          <a href="/media/{{p.prod_img}}" class="pop-up"><img
+                                  src="{% static 'img/icons/zoom-plus.png' %}" alt=""></a>
+                      </div>
+                  </figure>
+                  <div class="product-text">
+                      <a href="{{p.product_id}}/">
+                          <h6 id='namepr{{p.product_id}}'>{{p.product_name}}</h6>
+                      </a>
+                      <p>&#8377<span  id='pricepr{{p.product_id}}'>{{p.price}}</span> &nbsp<span class='scart'><button id='pr{{p.product_id}}' class="primary-btn pc-btn btn-dark cart">Add to cart</button></span></p>
+                  </div>
+              </div>
+          </div>
+        {% endfor  %}
+            </div>
+      </div>
+</section>
+{% endfor %}
+
+{% endblock %}
